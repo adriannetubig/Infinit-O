@@ -1,0 +1,26 @@
+﻿<Window x:Class="TestDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestDesktop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Button Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="BtnRefresh_Click"/>
+        <Label Content="School Name" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtSchoolName" HorizontalAlignment="Left" Height="23" Margin="111,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtSchoolName_TextChanged"/>
+        <Label Content="School Address" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtSchoolAddress" HorizontalAlignment="Left" Height="23" Margin="111,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtSchoolAddress_TextChanged"/>
+        <DataGrid Name="dgSchools" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Width="770" Height="255" RenderTransformOrigin="-2.117,0.697" IsReadOnly="True" Grid.ColumnSpan="2" AutoGenerateColumns="False" SelectedCellsChanged="DgSchools_SelectedCellsChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding  SchoolId}" Width="2*" Header="School Id" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding  SchoolName}" Width="3*" Header="School Name" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding  SchoolAddress}" Width="5*" Header="School Address" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="26,122,0,0" VerticalAlignment="Top" Width="75" Click="BtnCreate_Click"/>
+        <Button Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="106,122,0,0" VerticalAlignment="Top" Width="75" Click="BtnUpdate_Click"/>
+        <Button Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="186,122,0,0" VerticalAlignment="Top" Width="75" Click="BtnDelete_Click"/>
+    </Grid>
+</Window>
